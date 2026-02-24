@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nguyễn Minh Khôi</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+html,body{
+    height:100%;
+    overflow:hidden;
+    color:white;
+}
+
+/* VIDEO */
+video.bg-video{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+}
+
+/* CENTER */
+.container{
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* CARD */
+.card{
+    width:290px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background: rgba(255,255,255,0.02);
+    border-radius:25px;
+    padding:22px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* AVATAR */
+.avatar{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid white;
+    margin-bottom:12px;
+}
+
+h1{
+    font-size:18px;
+    margin-bottom:6px;
+}
+
+.bio{
+    font-size:13px;
+    opacity:0.9;
+    margin-bottom:18px;
+}
+
+/* LINKS */
+.links a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    text-decoration:none;
+    color:white;
+    padding:9px;
+    margin:7px 0;
+    border-radius:14px;
+    font-size:14px;
+    transition:0.3s;
+    background: rgba(255,255,255,0.05);
+}
+
+.links a:hover{
+    transform:scale(1.05);
+}
+
+/* HOVER MÀU RIÊNG */
+.zalo:hover{ background:#0084ff; box-shadow:0 0 15px #0084ff; }
+.fb:hover{ background:#1877f2; box-shadow:0 0 15px #1877f2; }
+.github:hover{ background:#333; box-shadow:0 0 15px #aaa; }
+.gmail:hover{ background:#ea4335; box-shadow:0 0 15px #ea4335; }
+
+</style>
+</head>
+
+<body>
+
+<video autoplay muted loop playsinline class="bg-video">
+    <source src="background.MP4" type="video/mp4">
+</video>
+
+<div class="container">
+    <div class="card">
+
+        <img src="avatar.JPG" class="avatar">
+
+        <h1>Nguyễn Minh Khôi</h1>
+
+        <div class="bio">
+            Không phải coder giỏi nhất,<br>
+            nhưng luôn là người không bỏ cuộc 🚀
+        </div>
+
+        <div class="links">
+            <a href="https://zalo.me/84989288257" target="_blank" class="zalo">
+                <i class="fa-solid fa-comment"></i> Zalo
+            </a>
+
+            <a href="https://www.facebook.com/share/1CMJqqzncC/?mibextid=wwXIfr"
+            target="_blank" class="fb">
+                <i class="fab fa-facebook"></i> Facebook
+            </a>
+
+            <a href="https://github.com/user-Map"
+            target="_blank" class="github">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+
+            <a href="mailto:nguyenminhkhoii275@gmail.com"
+            class="gmail">
+                <i class="fa-solid fa-envelope"></i> Gmail
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<audio autoplay loop>
+    <source src="music.MP3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>
