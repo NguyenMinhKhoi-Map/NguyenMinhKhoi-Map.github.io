@@ -24,17 +24,19 @@ html, body {
 
 /* Background Video */
 video{
-    position:fixed;
+    position: fixed;
     top:0;
     left:0;
     width:100%;
     height:100%;
     object-fit:cover;
-    z-index:-2;
+    z-index:-2; /* luôn đứng sau */
 }
 
 /* Container và spacing giữa các card */
 .container{
+    position: relative;
+    z-index: 1; /* card nằm trên video */
     max-width: 400px;
     margin: 50px auto;
     display:flex;
@@ -46,6 +48,8 @@ video{
 
 /* Card chung */
 .card{
+    position: relative;
+    z-index: 1; /* luôn nằm trên video */
     width: 100%;
     background: rgba(255,255,255,0.02);
     backdrop-filter: blur(6px);
@@ -92,7 +96,7 @@ video{
 
 .tabs button{
     flex:1;
-    padding:8px;
+    padding:10px 0;
     border:none;
     background:none;
     color:white;
