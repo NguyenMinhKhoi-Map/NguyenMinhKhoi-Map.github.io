@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nguyễn Minh Khôi</title>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -13,18 +12,17 @@
     padding:0;
     box-sizing:border-box;
     font-family:Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
-html, body{
+html, body {
+    height: auto;
+    overflow: auto;
+    background: #000;
     color:white;
-    background:black;
-    /* scroll được */
 }
 
-body{
-    overflow-y:auto;
-}
-
+/* Background Video */
 video{
     position:fixed;
     top:0;
@@ -35,21 +33,23 @@ video{
     z-index:-2;
 }
 
+/* Container và spacing giữa các card */
 .container{
+    max-width: 400px;
+    margin: 50px auto;
     display:flex;
-    justify-content:center;
-    align-items:flex-start; /* canh top */
-    padding-top:30px;
-    flex-direction:column; /* xếp theo cột */
-    gap:20px; /* khoảng cách giữa các card */
+    flex-direction: column;
+    gap: 30px; /* khoảng cách giữa các card */
+    align-items: center;
+    padding-bottom: 50px;
 }
 
-/* card chính */
+/* Card chung */
 .card{
-    width:320px;
+    width: 100%;
+    background: rgba(255,255,255,0.02);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    background: rgba(255,255,255,0.02);
     border-radius:25px;
     padding:20px;
     text-align:center;
@@ -57,7 +57,7 @@ video{
     box-shadow:0 10px 30px rgba(0,0,0,0.35);
 }
 
-/* status online/offline */
+/* Status online/offline */
 .status{
     display:inline-flex;
     align-items:center;
@@ -82,7 +82,7 @@ video{
     100% { box-shadow:0 0 5px; }
 }
 
-/* tabs */
+/* Tabs */
 .tabs{
     display:flex;
     background: rgba(255,255,255,0.05);
@@ -105,7 +105,7 @@ video{
     border-radius:20px;
 }
 
-/* content */
+/* Nội dung tab */
 .content{ display:none; }
 .content.active{ display:block; }
 
@@ -118,7 +118,6 @@ video{
     margin-bottom:10px;
 }
 
-/* link social */
 .links a{
     display:flex;
     align-items:center;
@@ -142,38 +141,14 @@ video{
 .gmail:hover{ background:#ea4335; box-shadow:0 0 15px #ea4335; }
 .discord:hover{ background:#5865F2; box-shadow:0 0 15px #5865F2; }
 
-/* journey - phần giới thiệu */
-.journey{
+.journey, .project{
     font-size:14px;
     line-height:1.6;
     background: rgba(255,255,255,0.05);
     padding:12px;
     border-radius:15px;
+    margin-top:10px;
     text-align:left;
-}
-
-/* khung dự án đầu tiên */
-.project-share{
-    margin-top:15px;
-    padding:12px;
-    background: rgba(255,255,255,0.05);
-    border-radius:15px;
-    line-height:1.6;
-    text-align:left;
-    transition:0.3s;
-}
-.project-share:hover{
-    background: rgba(255,255,255,0.12);
-    transform:scale(1.02);
-}
-.project-share a{
-    color:#00ffd5;
-    text-decoration:underline;
-    transition:0.3s;
-}
-.project-share a:hover{
-    color:#00fff0;
-    transform:scale(1.05);
 }
 
 /* MUSIC BUTTON */
@@ -211,82 +186,71 @@ video{
 </head>
 
 <body>
-
 <video autoplay muted loop playsinline>
     <source src="background.MP4" type="video/mp4">
 </video>
 
 <div class="container">
 
-<!-- CARD CHÍNH -->
+<!-- CARD GIỚI THIỆU -->
 <div class="card">
-
-<div class="status">
-    <span class="dot" id="dot"></span>
-    <span id="statusText">Online</span>
-</div>
-
-<div class="tabs">
-    <button class="active" onclick="showTab(0,this)">👤</button>
-    <button onclick="showTab(1,this)">&lt;/&gt;</button>
-    <button onclick="showTab(2,this)">🗓️</button>
-</div>
-
-<!-- TAB 1 - Giới thiệu -->
-<div class="content active">
-    <img src="avatar.JPG" class="avatar">
-    <div class="bio">
-        Không phải coder giỏi nhất,<br>
-        nhưng luôn là người không bỏ cuộc.<br><br>
-        🚀 Future Developer...
+    <div class="status">
+        <span class="dot" id="dot"></span>
+        <span id="statusText">Online</span>
+    </div>
+    <div class="tabs">
+        <button class="active" onclick="showTab(0,this)">👤</button>
+        <button onclick="showTab(1,this)">&lt;/&gt;</button>
+        <button onclick="showTab(2,this)">🗓️</button>
+    </div>
+    <div class="content active">
+        <img src="avatar.JPG" class="avatar">
+        <div class="bio">
+            Không phải coder giỏi nhất,<br>
+            nhưng luôn là người không bỏ cuộc.<br><br>
+            🚀 Future Developer...
+        </div>
+    </div>
+    <div class="content">
+        <div class="links">
+            <a href="https://zalo.me/84989288257" target="_blank" class="zalo">
+                <i class="fa-solid fa-comment"></i> Zalo
+            </a>
+            <a href="https://www.facebook.com/share/1CMJqqzncC/?mibextid=wwXIfr" target="_blank" class="fb">
+                <i class="fab fa-facebook"></i> Facebook
+            </a>
+            <a href="https://github.com/user-Map" target="_blank" class="github">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="mailto:nguyenminhkhoii275@gmail.com" class="gmail">
+                <i class="fa-solid fa-envelope"></i> Gmail
+            </a>
+            <a href="https://discord.gg/DrsjUsGp" target="_blank" class="discord">
+                <i class="fab fa-discord"></i> Discord
+            </a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="journey">
+            Em là Khôi, mọi người thường gọi em là Mập.<br><br>
+            Ước mơ của em là đậu Đại học Công Nghệ Thông Tin TP.HCM.<br><br>
+            Và em sẽ cố gắng chia sẻ hành trình phát triển của mình từng ngày 🚀
+        </div>
     </div>
 </div>
 
-<!-- TAB 2 - Liên kết -->
-<div class="content">
-    <div class="links">
-        <a href="https://zalo.me/84989288257" target="_blank" class="zalo">
-            <i class="fa-solid fa-comment"></i> Zalo
-        </a>
-        <a href="https://www.facebook.com/share/1CMJqqzncC/?mibextid=wwXIfr" target="_blank" class="fb">
-            <i class="fab fa-facebook"></i> Facebook
-        </a>
-        <a href="https://github.com/user-Map" target="_blank" class="github">
-            <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="mailto:nguyenminhkhoii275@gmail.com" class="gmail">
-            <i class="fa-solid fa-envelope"></i> Gmail
-        </a>
-        <a href="https://discord.gg/DrsjUsGp" target="_blank" class="discord">
-            <i class="fab fa-discord"></i> Discord
-        </a>
+<!-- CARD DỰ ÁN 1 -->
+<div class="card">
+    <div class="project">
+        <strong>Dự án đầu tiên:</strong><br><br>
+        Phát triển 1 con bot Telegram và mình đã thành công.<br>
+        Đây là source bot có hướng dẫn dùng dưới phần README.<br>
+        Mình share cho tất cả mọi người trải nghiệm.<br><br>
+        <a href="https://github.com/user-Map/bot" target="_blank">→ Link source bot</a>
     </div>
 </div>
 
-<!-- TAB 3 - Hành trình + Dự án đầu tiên -->
-<div class="content">
-    <div class="journey">
-        Em là Khôi, mọi người thường gọi em là Mập.<br><br>
-        Ước mơ của em là đậu Đại học Công Nghệ Thông Tin TP.HCM.<br><br>
-        Và em sẽ cố gắng chia sẻ hành trình phát triển của mình từng ngày 🚀
-    </div>
-
-    <!-- Khung dự án đầu tiên -->
-    <div class="project-share">
-        <strong>Dự án đầu tiên:</strong><br>
-        Mình đã phát triển một <strong>bot Telegram</strong> và đã thành công!<br>
-        Đây là source bot của mình, có hướng dẫn sử dụng trong phần <strong>README</strong>.<br>
-        Mình muốn chia sẻ để tất cả mọi người có thể trải nghiệm.<br><br>
-        🔗 Link source: 
-        <a href="https://github.com/user-Map/bot" target="_blank">
-            https://github.com/user-Map/bot
-        </a>
-    </div>
-
 </div>
-
-</div> <!-- end card -->
-</div> <!-- end container -->
 
 <button id="musicBtn" class="music-btn">
     <i class="fas fa-headphones"></i>
