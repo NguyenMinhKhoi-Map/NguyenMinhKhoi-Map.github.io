@@ -15,10 +15,14 @@
     font-family:Arial, sans-serif;
 }
 
-html,body{
-    height:100%;
-    overflow:hidden;
+html, body{
     color:white;
+    background:black;
+    /* scroll được */
+}
+
+body{
+    overflow-y:auto;
 }
 
 video{
@@ -32,12 +36,15 @@ video{
 }
 
 .container{
-    height:100%;
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start; /* canh top */
+    padding-top:30px;
+    flex-direction:column; /* xếp theo cột */
+    gap:20px; /* khoảng cách giữa các card */
 }
 
+/* card chính */
 .card{
     width:320px;
     backdrop-filter: blur(6px);
@@ -50,6 +57,7 @@ video{
     box-shadow:0 10px 30px rgba(0,0,0,0.35);
 }
 
+/* status online/offline */
 .status{
     display:inline-flex;
     align-items:center;
@@ -74,6 +82,7 @@ video{
     100% { box-shadow:0 0 5px; }
 }
 
+/* tabs */
 .tabs{
     display:flex;
     background: rgba(255,255,255,0.05);
@@ -96,6 +105,7 @@ video{
     border-radius:20px;
 }
 
+/* content */
 .content{ display:none; }
 .content.active{ display:block; }
 
@@ -108,6 +118,7 @@ video{
     margin-bottom:10px;
 }
 
+/* link social */
 .links a{
     display:flex;
     align-items:center;
@@ -131,6 +142,7 @@ video{
 .gmail:hover{ background:#ea4335; box-shadow:0 0 15px #ea4335; }
 .discord:hover{ background:#5865F2; box-shadow:0 0 15px #5865F2; }
 
+/* journey - phần giới thiệu */
 .journey{
     font-size:14px;
     line-height:1.6;
@@ -140,14 +152,14 @@ video{
     text-align:left;
 }
 
-/* PROJECT SHARE */
+/* khung dự án đầu tiên */
 .project-share{
-    margin-top:15px; 
-    padding:12px; 
-    background: rgba(255,255,255,0.05); 
-    border-radius:15px; 
-    line-height:1.6; 
-    text-align:left; 
+    margin-top:15px;
+    padding:12px;
+    background: rgba(255,255,255,0.05);
+    border-radius:15px;
+    line-height:1.6;
+    text-align:left;
     transition:0.3s;
 }
 .project-share:hover{
@@ -205,6 +217,8 @@ video{
 </video>
 
 <div class="container">
+
+<!-- CARD CHÍNH -->
 <div class="card">
 
 <div class="status">
@@ -218,6 +232,7 @@ video{
     <button onclick="showTab(2,this)">🗓️</button>
 </div>
 
+<!-- TAB 1 - Giới thiệu -->
 <div class="content active">
     <img src="avatar.JPG" class="avatar">
     <div class="bio">
@@ -227,6 +242,7 @@ video{
     </div>
 </div>
 
+<!-- TAB 2 - Liên kết -->
 <div class="content">
     <div class="links">
         <a href="https://zalo.me/84989288257" target="_blank" class="zalo">
@@ -247,6 +263,7 @@ video{
     </div>
 </div>
 
+<!-- TAB 3 - Hành trình + Dự án đầu tiên -->
 <div class="content">
     <div class="journey">
         Em là Khôi, mọi người thường gọi em là Mập.<br><br>
@@ -254,9 +271,9 @@ video{
         Và em sẽ cố gắng chia sẻ hành trình phát triển của mình từng ngày 🚀
     </div>
 
-    <!-- Dự án 1 -->
+    <!-- Khung dự án đầu tiên -->
     <div class="project-share">
-        <strong>Dự án 1:</strong><br>
+        <strong>Dự án đầu tiên:</strong><br>
         Mình đã phát triển một <strong>bot Telegram</strong> và đã thành công!<br>
         Đây là source bot của mình, có hướng dẫn sử dụng trong phần <strong>README</strong>.<br>
         Mình muốn chia sẻ để tất cả mọi người có thể trải nghiệm.<br><br>
@@ -266,20 +283,10 @@ video{
         </a>
     </div>
 
-    <!-- Dự án 2 -->
-    <div class="project-share">
-        <strong>Dự án 2:</strong><br>
-        Nội dung dự án tiếp theo bạn muốn chia sẻ sẽ đặt ở đây. Có thể là website, script, bot mới…<br>
-        🔗 Link source: 
-        <a href="#" target="_blank">
-            Link dự án
-        </a>
-    </div>
-
 </div>
 
-</div>
-</div>
+</div> <!-- end card -->
+</div> <!-- end container -->
 
 <button id="musicBtn" class="music-btn">
     <i class="fas fa-headphones"></i>
