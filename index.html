@@ -39,7 +39,7 @@ video{
 }
 
 .card{
-    width:300px;
+    width:320px;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     background: rgba(255,255,255,0.02);
@@ -141,6 +141,19 @@ video{
 }
 
 /* PROJECT SHARE */
+.project-share{
+    margin-top:15px; 
+    padding:12px; 
+    background: rgba(255,255,255,0.05); 
+    border-radius:15px; 
+    line-height:1.6; 
+    text-align:left; 
+    transition:0.3s;
+}
+.project-share:hover{
+    background: rgba(255,255,255,0.12);
+    transform:scale(1.02);
+}
 .project-share a{
     color:#00ffd5;
     text-decoration:underline;
@@ -152,7 +165,6 @@ video{
 }
 
 /* MUSIC BUTTON */
-
 @keyframes rotate {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
@@ -240,19 +252,30 @@ video{
         Em là Khôi, mọi người thường gọi em là Mập.<br><br>
         Ước mơ của em là đậu Đại học Công Nghệ Thông Tin TP.HCM.<br><br>
         Và em sẽ cố gắng chia sẻ hành trình phát triển của mình từng ngày 🚀
-        
-        <!-- Khung chia sẻ dự án đầu tiên -->
-        <div class="project-share" style="margin-top:15px; padding:12px; background: rgba(255,255,255,0.05); border-radius:15px; line-height:1.6; text-align:left;">
-            <strong>Dự án đầu tiên của mình:</strong><br>
-            Mình đã phát triển một <strong>bot Telegram</strong> và đã thành công!  
-            Đây là source bot của mình, có hướng dẫn sử dụng trong phần <strong>README</strong>.  
-            Mình muốn chia sẻ để tất cả mọi người có thể trải nghiệm.<br><br>
-            🔗 Link source: 
-            <a href="https://github.com/user-Map/bot" target="_blank">
-                https://github.com/user-Map/bot
-            </a>
-        </div>
     </div>
+
+    <!-- Dự án 1 -->
+    <div class="project-share">
+        <strong>Dự án 1:</strong><br>
+        Mình đã phát triển một <strong>bot Telegram</strong> và đã thành công!<br>
+        Đây là source bot của mình, có hướng dẫn sử dụng trong phần <strong>README</strong>.<br>
+        Mình muốn chia sẻ để tất cả mọi người có thể trải nghiệm.<br><br>
+        🔗 Link source: 
+        <a href="https://github.com/user-Map/bot" target="_blank">
+            https://github.com/user-Map/bot
+        </a>
+    </div>
+
+    <!-- Dự án 2 -->
+    <div class="project-share">
+        <strong>Dự án 2:</strong><br>
+        Nội dung dự án tiếp theo bạn muốn chia sẻ sẽ đặt ở đây. Có thể là website, script, bot mới…<br>
+        🔗 Link source: 
+        <a href="#" target="_blank">
+            Link dự án
+        </a>
+    </div>
+
 </div>
 
 </div>
